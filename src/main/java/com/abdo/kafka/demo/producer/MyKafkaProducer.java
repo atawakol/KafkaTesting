@@ -17,13 +17,13 @@ import org.apache.kafka.clients.producer.ProducerRecord;
  */
 public class MyKafkaProducer {
     
-    private static final String TOPIC = "replicated_topic";
+    private static final String TOPIC = "User_Messages";
     private static final DateFormat formatter = DateFormat.getDateTimeInstance();
     
-    public static void sendMessage(int key, String value) {
+    public static void sendMessage(String key, String value) {
         String message = String.format("Message  %s with key %s has been sent at %s", value, String.valueOf(key), formatter.format(new Date()));
-        KafkaProducer<Integer, String> producer = new KafkaProducer<>(getMandtoryConfigurations());
-        ProducerRecord<Integer, String> recorder = new ProducerRecord<>(TOPIC, key, message);
+        KafkaProducer<String, String> producer = new KafkaProducer<>(getMandtoryConfigurations());
+        ProducerRecord<String, String> recorder = new ProducerRecord<>(TOPIC, key, message);
         
         try {
             System.out.println("Trying to send");

@@ -33,7 +33,7 @@ public class KafkaProducerTest {
     public final void testMessageSendWithKeyValyePair(){
         
         for (int i = 1 ; i <= 150; i++) {
-             MyKafkaProducer.sendMessage(i , "Producer Message " + i);
+             MyKafkaProducer.sendMessage(Integer.toString(i) , "Producer Message " + i);
         }
         
        
