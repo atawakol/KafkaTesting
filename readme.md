@@ -63,13 +63,19 @@ You can check the status of the topic by running the following command
 **Notes**
 
 1. To create topic with one partition only and 3 replica, run the following 
-  `$> bin/kafka-topics.sh --create --topic "User_Messages"  --zookeeper localhost:2181  --partitions 3  --replication-factor 3`
-
-2. To list all topics, run the following 
-  `$> bin/kafka-topics.sh --list  --zookeeper localhost:2181`
-
+ * `$> bin/kafka-topics.sh --create --topic "User_Messages"  --zookeeper localhost:2181  --partitions 3  --replication-factor 3`
+2. To list all topics, run the following
+ * `$> bin/kafka-topics.sh --list  --zookeeper localhost:2181`
 3. To delete a topic, run the following  ( the delete.topic.enable has to be true on all brokers first )
-  `$> bin/kafka-topics.sh --delete --topic "test"  --zookeeper localhost:2181`
+ * `$> bin/kafka-topics.sh --delete --topic "test"  --zookeeper localhost:2181`
+4- To run a the Kafka "console" producer that is shipped with the Kafka folder
+ * `$> bin/kafka-console-producer.sh  --broker-list localhost:9092 --topic User_Messages`
+   OR
+ * `$> bin/kafka-console-producer.sh config/producer.properties`
+5- To run a the Kafka "console" consumer that is shipped with the Kafka folder
+ * `$> in/kafka-console-consumer.sh --zookeeper localhost:2181 --topic User_Messages --from-beginning`
+
+
 
 
 ''''
