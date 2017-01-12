@@ -32,6 +32,9 @@ public class MyKafkaProducer {
             e.printStackTrace();
             throw e;
         }
+        finally {
+            producer.close();
+        }
     }
     
     public static void sendMessage(String value) {
